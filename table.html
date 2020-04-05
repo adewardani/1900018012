@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form Mahasiswa</title>
+</head>
+<body>
+	<form>
+		<table>
+		<div>
+			<tr>
+				<td>Nama</td>
+				<td><input type="text" id="Nama"></td>
+			</tr>
+
+
+			<tr>
+				<td>Email</td>
+				<td><input type="text" id="Email"></td>
+			</tr>
+
+			<tr>
+				<td>Jenis Kelamin</td>
+				<td><input type="radio" id="Pria" name="JK"><label>L</label></td>
+				<td><input type="radio" id="Wanita" name="JK">P</td>
+			</tr>
+
+			<tr>
+				<div class="main">
+					<td>Agama</td>
+					<td><div class="select">
+						<select name="slt-1" id="slt-1">
+						<option></option>
+						<option value="1">Islam</option>
+						<option value="2">Kristen</option>
+						<option value="3">Katholik</option>
+						<option value="4">Budha</option>
+						<option value="5">Hindu</option>
+						<option value="6">Konghucu</option>
+						</select>
+					</td>
+
+				</div>
+				</tr>
+				<tr>
+					<td>Alamat</td>
+					<td><textarea>Nama Jalan, RT RW</textarea></td>
+				</tr>
+				<tr>
+					<td>Centang Kotak di Sebelah <input type="checkbox" name="cekbox"></td>
+
+				</tr>
+				<tr>
+					<td><button type="submit">kirim</button></td>
+					<td><button type="cancel">batal</button></td>
+				</tr>
+
+		</div>
+
+
+
+	</table>
+	</form>
+</body>
+</html>
