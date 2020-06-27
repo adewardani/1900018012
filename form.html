@@ -1,37 +1,76 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<style type="text/css">
+		body {
+			background-color: #2A93D5;
+		}
+
+		#form {
+        width: 400px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        background: white;
+		}
+	</style>
 	<title></title>
 </head>
 <body>
-	<form action="next">
+
+<div id="form">
+	<form action="form.php" method="post">
 	<!-- input text -->
-	<p>Masukkan Email</p>
-	<input type="input" name="email">
+	<div>
+		<span>Nama :</span>
+		<input type="text" name="nama" required>
+	</div>
+
+	<div>
+		<span>Email :</span>
+		<input type="email" name="email" required>
+	</div>
+
+	<div>
 	<!-- Radio -->
-	<p>Jenis Kelamin</p>
-	<input type="radio" name="l"><label>L</label>
-	<input type="radio" name="p"><label>P</label>
+		<span>Jenis Kelamin :</span>
+		<input type="radio" name="jeniskelamin" value="Laki - Laki" required><label>L</label>
+		<input type="radio" name="jeniskelamin" value="Perempuan" required><label>P</label>
+		
+	</div>
+
+	<div>
 	<!-- Select -->
-	<p>Agama</p>
-	<select>
-		<option></option>
-		<option>Islam</option>
-		<option>Kristen</option>
-		<option>Budha</option>
-		<option>Katolik</option>
-		<option>Hindu</option>
-		<option>Konghucu</option>
-	</select>
+		<span>Agama</span>
+		<select name="agama" required>
+			<option></option>
+			<option>Islam</option>
+			<option>Kristen</option>
+			<option>Budha</option>
+			<option>Katolik</option>
+			<option>Hindu</option>
+			<option>Konghucu</option>
+		</select>
+	</div>
+
+	<div>
 	<!-- Text Area -->
-	<p>Masukkan Alamat</p>
-	<textarea>Nama Jalan, RT RW</textarea>
+		<span>Alamat</span>
+		<textarea name="alamat" placeholder="Nama Jalan, RT RW" required></textarea>
+	</div>
+
+	<div>
 	<!-- Checkbox -->
-	<p>Centang Tombol di Bawah</p>
-	<input type="checkbox" name="cek">
-	<!-- Button/Submit -->
-	<input type="Submit" value="Submit">
+		<span>Centang Tombol di Samping</span>
+		<input type="checkbox" name="cek" required>
+	</div>
+
+	<div>
+			<!-- Button/Submit -->
+			<input type="reset" name="reset">
+			<input type="submit" name="submit" value="submit">
+	</div>
 	</form>
+</div>
 
 </body>
 </html>
