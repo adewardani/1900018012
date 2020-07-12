@@ -1,76 +1,155 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<title></title>
 	<style type="text/css">
 		body {
-			background-color: #2A93D5;
+			background:linear-gradient(white,lightblue);
+			background-attachment: fixed;
 		}
 
-		#form {
-        width: 400px;
-        padding: 10px;
-        border: 1px solid #ccc;
-        background: white;
+		#container {
+			width: 800px;
+		    height: auto;
+		    margin: 0px auto;
+		    padding: 10px;
+		    border: 1px solid;
+		    background-color: white;
 		}
+
+		#container #footer {
+			background: lightblue;
+		    padding: 10px;
+		}
+
+		#container h3 {
+			text-align: center;
+			margin: 5px;
+		}
+
+		#container h4 {
+			text-align: center;
+		}
+
+		#container #header {
+			background: black;
+		    padding: 2px;
+		}
+
+		#input {
+		 max-width: 50%;
+ 		 margin: auto;
+		}
+
+		input {
+			width: 260px;
+ 			border-radius: 4px;
+		}
+
+		.submit {
+			margin: 0 auto;
+			width: 90px;
+		}
+
+		.submit input {
+			width: 90px;
+ 			border-radius: 1px;
+		}
+
+		#a {
+			text-align: center;
+			color: black;
+			padding-top: 10px;
+		}
+
+		#a a {
+			color: black;
+		}	
 	</style>
-	<title></title>
+
 </head>
 <body>
 
-<div id="form">
-	<form action="form.php" method="post">
-	<!-- input text -->
-	<div>
-		<span>Nama :</span>
-		<input type="text" name="nama" required>
+	<div id="container">
+
+		<div id="judul1">
+			<h3>UNIVERSITAS AHMAD DAHLAN</h3>
+			<h3>FAKULTAS TEKNIK INFORMATIKA</h3>
+		</div>
+
+		<div id="header"></div>
+
+		<div id="judul2">
+			<h4>FORMULIR PENDAFTARAN LOMBA KARYA TULIS ILMIAH</h4>
+		</div>
+
+			<form id="input" method="post" action="form.php">
+			<!-- input text -->
+				<table>
+					<tr>
+						<td><span>1.Judul Karya</span></td>
+						<td><input type="text" name="judul_karya"></td>
+					</tr>
+					<tr>
+						<td>2. Asal Sekolah</td>
+						<td><input type="text" name="asal_sekolah"></td>
+					</tr>
+					<tr>
+						<td>3. Alamat Sekolah</td>
+						<td><input type="text" name="alamat_sekolah"></td>
+					</tr>
+				</table>
+
+				<br>
+					<table border="0">
+						<tr>
+							<td colspan="3"><b>DATA PESERTA</b></td>
+						</tr>
+						<tr>
+							<td>1. Nama</td>
+							<td><input type="text" name="nama_peserta"></td>
+						</tr>
+						<tr>
+							<td>2. Tanggal Lahir</td>
+							<td><input type="text" name="ttl_peserta"></td>
+						</tr>
+						<tr>
+							<td>2. Kelas</td>
+							<td><input type="text" name="kelas_peserta"></td>
+						</tr>
+						<tr>
+							<td>3. Alamat Rumah</td>
+							<td><input type="text" name="alamat_peserta"></td>
+						</tr>
+						<tr>
+							<td>4. Nomor HP</td>
+							<td><input type="text" name="nomorhp_peserta"></td>
+						</tr>
+						<tr>
+							<td>5. Email</td>
+							<td><input type="text" name="email_peserta"></td>
+						</tr>
+					</table>
+					<p>Catatan :</p>
+					<ul>
+						<li>Mohon untuk memastikan kebenaran penulisan nama peserta dan nama sekolah</li>
+						<li>Satu Formulir hanya berlaku untuk satu peserta</li>
+					</ul>
+
+					<div class="submit">
+					<input class="input1" type="submit" name="submit" value="Daftar">
+					</div>
+			</form><br>
+
+		<div id="footer">
+			
+		</div>
+
 	</div>
 
-	<div>
-		<span>Email :</span>
-		<input type="email" name="email" required>
+	<div id="a">
+		<a href="table.php">Klik Disini Untuk Melihat Data Pendaftar</a>
 	</div>
-
-	<div>
-	<!-- Radio -->
-		<span>Jenis Kelamin :</span>
-		<input type="radio" name="jeniskelamin" value="Laki - Laki" required><label>L</label>
-		<input type="radio" name="jeniskelamin" value="Perempuan" required><label>P</label>
-		
-	</div>
-
-	<div>
-	<!-- Select -->
-		<span>Agama</span>
-		<select name="agama" required>
-			<option></option>
-			<option>Islam</option>
-			<option>Kristen</option>
-			<option>Budha</option>
-			<option>Katolik</option>
-			<option>Hindu</option>
-			<option>Konghucu</option>
-		</select>
-	</div>
-
-	<div>
-	<!-- Text Area -->
-		<span>Alamat</span>
-		<textarea name="alamat" placeholder="Nama Jalan, RT RW" required></textarea>
-	</div>
-
-	<div>
-	<!-- Checkbox -->
-		<span>Centang Tombol di Samping</span>
-		<input type="checkbox" name="cek" required>
-	</div>
-
-	<div>
-			<!-- Button/Submit -->
-			<input type="reset" name="reset">
-			<input type="submit" name="submit" value="submit">
-	</div>
-	</form>
-</div>
 
 </body>
 </html>
