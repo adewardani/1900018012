@@ -1,64 +1,91 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Form Mahasiswa</title>
-</head>
-<body>
-	<form>
-		<table>
-		<div>
-			<tr>
-				<td>Nama</td>
-				<td><input type="text" id="Nama"></td>
-			</tr>
+<style type="text/css">
 
+  	table {
+  		margin: 0px auto;
+  		border-collapse: collapse;
+  	}
 
-			<tr>
-				<td>Email</td>
-				<td><input type="text" id="Email"></td>
-			</tr>
+  	table tr td {
+		width: 350px;
+		border:1px solid; padding: 2px;
+		width: 250px;
+  	}
 
-			<tr>
-				<td>Jenis Kelamin</td>
-				<td><input type="radio" id="Pria" name="JK"><label>L</label></td>
-				<td><input type="radio" id="Wanita" name="JK">P</td>
-			</tr>
+  	#table {
+  		text-align: center;
+  		text-decoration: underline;
+  	}
 
-			<tr>
-				<div class="main">
-					<td>Agama</td>
-					<td><div class="select">
-						<select name="slt-1" id="slt-1">
-						<option></option>
-						<option value="1">Islam</option>
-						<option value="2">Kristen</option>
-						<option value="3">Katholik</option>
-						<option value="4">Budha</option>
-						<option value="5">Hindu</option>
-						<option value="6">Konghucu</option>
-						</select>
-					</td>
+  	#footer {
+  		width: 300px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        background: white;
+        margin: 0 auto;
+        text-align: center;
+  	}
 
-				</div>
-				</tr>
-				<tr>
-					<td>Alamat</td>
-					<td><textarea>Nama Jalan, RT RW</textarea></td>
-				</tr>
-				<tr>
-					<td>Centang Kotak di Sebelah <input type="checkbox" name="cekbox"></td>
+</style>
 
-				</tr>
-				<tr>
-					<td><button type="submit">kirim</button></td>
-					<td><button type="cancel">batal</button></td>
-				</tr>
+<?php
+	
+	$file = "data_lomba.txt";
+	$fp = fopen($file, "a+");
 
-		</div>
+	//tampilkan
 
+	echo "<div id='table'><h2>Data Lomba LKTI Tingkat Nasional UAD</h2>";
 
+	while($data = fgets($fp,10000)) {
+		$pisah = explode("|", $data);
 
-	</table>
-	</form>
-</body>
-</html>
+		echo "<table>";
+		echo "<tr>
+				<td class='table1'>Judul Karya</td>
+				<td> $pisah[0]</td>
+			  </tr>";
+		echo "<tr>
+				<td class='table1'>Asal Sekolah</td>
+				<td> $pisah[1]</td>
+			  </tr>";
+		echo "<tr>
+				<td class='table1'>Alamat Sekolah</td>
+				<td> $pisah[2]</td>
+			  </tr>";
+		echo "<tr>
+				<td class='table1'>Nama Peserta</td>
+				<td> $pisah[3]</td>
+			  </tr>";
+		echo "<tr>
+				<td class='table1'>Tanggal Lahir</td>
+				<td> $pisah[4]</td>
+			  </tr>";
+		echo "<tr>
+				<td class='table1'>Kelas</td>
+				<td> $pisah[5]</td>
+			  </tr>";	  
+		echo "<tr>
+				<td class='table1'>Alamat Peserta</td>
+				<td> $pisah[6]</td>
+			  </tr>";
+		echo "<tr>
+				<td class='table1'>Nomor HP</td>
+				<td> $pisah[7]</td>
+			  </tr>";
+		echo "<tr>
+				<td class='table1'>Email</td>
+				<td> $pisah[8]</td>
+			  </tr>";	  	  	  
+
+		echo "</table><br></div>";
+
+	}
+
+	echo "<div id='footer'>
+		<a style='color:black;border-radius:2px;font-weight:bold;' href='hapus_data.php'>Hapus Semua Data</a>
+	</div>";
+	echo "<div id='footer'>
+		<a style='color:black;border-radius:2px;font-weight:bold;' href='form.html'>Kembali Ke Menu Pendaftaran</a>
+	</div>";
+
+?>
