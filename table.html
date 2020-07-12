@@ -1,5 +1,6 @@
 <style type="text/css">
 
+
   	table {
   		margin: 0px auto;
   		border-collapse: collapse;
@@ -17,12 +18,26 @@
   	}
 
   	#footer {
-  		width: 300px;
+  		width: 400px;
         padding: 10px;
-        border: 1px solid #ccc;
         background: white;
         margin: 0 auto;
         text-align: center;
+  	}
+
+
+  	#footer .kembali input{
+  		background-color: green;
+  		color: white;
+  		font-weight: bold;
+  		margin-bottom: 10px;
+  		height: 30px;
+  	}
+
+  	#footer .hapus input{
+  		background-color: red;
+  		color: white;
+  		font-weight: bold;
   	}
 
 </style>
@@ -36,7 +51,7 @@
 
 	echo "<div id='table'><h2>Data Lomba LKTI Tingkat Nasional UAD</h2>";
 
-	while($data = fgets($fp,10000)) {
+	while($data = fgets($fp,20000)) {
 		$pisah = explode("|", $data);
 
 		echo "<table>";
@@ -82,10 +97,9 @@
 	}
 
 	echo "<div id='footer'>
-		<a style='color:black;border-radius:2px;font-weight:bold;' href='hapus_data.php'>Hapus Semua Data</a>
-	</div>";
-	echo "<div id='footer'>
-		<a style='color:black;border-radius:2px;font-weight:bold;' href='form.html'>Kembali Ke Menu Pendaftaran</a>
-	</div>";
+			<div class='kembali'><a href='form.html'><input type='button' value='Kembali Ke Menu Pendaftaran'></a><div>
+			<div class='hapus'><a href='hapus_data.php'><input type='button' value='Hapus Seluruh Data'></a><div>";
+	echo "</div>";
+
 
 ?>
