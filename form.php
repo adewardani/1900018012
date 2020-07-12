@@ -62,7 +62,6 @@
 				   </ul>";
 			echo "<a href='form.html'>Klik Disini</a><label> Untuk Mendaftar Ulang<label></div>";
 
-
 		}else {
 			fputs($fp, "$judul_karya|$asal_sekolah|$alamat_sekolah|$nama_peserta|$ttl_peserta|$kelas_peserta|$alamat_peserta|$nomorhp_peserta|$email_peserta\n");
 			fclose($fp);
