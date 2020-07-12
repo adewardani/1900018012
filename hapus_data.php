@@ -7,6 +7,14 @@
         margin: 0 auto;
         text-align: center;
   	}
+
+  	#footer .kembali input{
+  		background-color: green;
+  		color: white;
+  		font-weight: bold;
+  		margin-bottom: 10px;
+  		height: 30px;
+  	}
 </style>
 
 <?php
@@ -25,8 +33,9 @@
 			//tutup
 			fclose($fl);
 
-			echo "<div id='footer'>Data Anda Telah Dihapus<br>";
-			echo "<a style='color:black;border-radius:2px;font-weight:bold;' href='form.html'>Kembali Ke Menu Pendaftaran</a>
-			</div>";
+			echo "<div id='footer'>
+				<h4>Data Telah Terhapus</h4>
+				<div class='kembali'><a href='form.html'><input type='button' value='Kembali Ke Menu Pendaftaran'></a><div>";
+			echo "</div>";
 		
 ?>
